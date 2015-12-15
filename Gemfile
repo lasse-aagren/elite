@@ -47,14 +47,11 @@ end
 
 
 gem 'blacklight', '~> 5.16'
-gem 'blacklight-spotlight', github: 'sul-dlss/spotlight'
+gem 'blacklight-gallery'
+gem 'blacklight-spotlight', github: 'ronan-mch/spotlight', branch: 'dtu_dev'
 gem 'jettywrapper', '>= 2.0'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'
 gem 'devise-guests', '~> 0.3'
 gem 'friendly_id'
 gem 'sitemap_generator'
-gem 'blacklight-gallery', '>= 0.3.0'
-gem 'blacklight-oembed'
-gem 'social-share-button'
-gem 'devise_invitable'

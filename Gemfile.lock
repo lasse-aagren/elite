@@ -1,6 +1,7 @@
 GIT
-  remote: git://github.com/sul-dlss/spotlight.git
-  revision: 3cad43293c5a07b4d5c61581e1d53455c3b01d80
+  remote: git://github.com/ronan-mch/spotlight.git
+  revision: 650ceb04e72205e579d984f140923701aa358783
+  branch: dtu_dev
   specs:
     blacklight-spotlight (0.12.1)
       acts-as-taggable-on (~> 3.5)
@@ -355,14 +356,12 @@ PLATFORMS
 
 DEPENDENCIES
   blacklight (~> 5.16)
-  blacklight-gallery (>= 0.3.0)
-  blacklight-oembed
+  blacklight-gallery
   blacklight-spotlight!
   byebug
   coffee-rails (~> 4.1.0)
   devise
   devise-guests (~> 0.3)
-  devise_invitable
   friendly_id
   jbuilder (~> 2.0)
   jettywrapper (>= 2.0)
@@ -372,7 +371,6 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sitemap_generator
-  social-share-button
   spring
   sqlite3
   turbolinks
