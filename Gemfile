@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'xray-rails'
 end
 
 group :development do
@@ -49,6 +50,7 @@ end
 gem 'blacklight', '~> 5.16'
 gem 'blacklight-gallery'
 gem 'blacklight-spotlight', github: 'ronan-mch/spotlight', branch: 'dtu_dev'
+gem 'dtu_blacklight_common', github: 'dtulibrary/dtu_blacklight_common', branch: 'blacklight5.16'
 gem 'jettywrapper', '>= 2.0'
 gem 'rsolr', '~> 1.0.6'
 gem 'devise'

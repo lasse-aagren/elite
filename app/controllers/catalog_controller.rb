@@ -3,21 +3,18 @@
 class CatalogController < ApplicationController
   include Blacklight::Catalog
   include SpotlightConfig
+  include Dtu::CatalogBehavior
 
   configure_blacklight do |config|
 
+    config.default_solr_params.merge!(qt: 'ddf_publ')
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
-    config.default_solr_params = {
-      qt: 'search',
-      rows: 10,
-      fl: '*'
-    }
-
-    config.document_solr_path = 'get'
-    config.document_unique_id_param = 'ids'
+    config.solr_path = 'ddf_publ'
+    config.document_solr_path = 'ddf_publ_document'
+    config.document_unique_id_param = 'cluster_id_ssm'
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'full_title_tesim'
+    config.index.title_field = 'title_ts'
 
     config.add_search_field 'all_fields', label: 'Everything'
 
