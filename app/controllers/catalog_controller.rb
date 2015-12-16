@@ -10,8 +10,8 @@ class CatalogController < ApplicationController
     config.default_solr_params.merge!(qt: 'ddf_publ')
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.solr_path = 'ddf_publ'
-    config.document_solr_path = 'ddf_publ_document'
-    config.document_unique_id_param = 'cluster_id_ssm'
+    config.document_solr_path = 'ddf_publ'
+    config.document_unique_id_param = SolrDocument.unique_key
 
     # solr field configuration for search results/index views
     config.index.title_field = 'title_ts'
