@@ -1,0 +1,24 @@
+<%= bootstrap_form_for @exhibit, url: ((spotlight.exhibit_path(@exhibit) if @exhibit.persisted?) || spotlight.exhibits_path), layout: :horizontal, label_col: 'col-md-2', control_col: 'col-md-10', html: {class: "row"} do |f| %>
+<div class="row col-md-12">
+  <%= f.text_field :title, label: t(:'.fields.title.label'), help: t(:'.fields.title.help_block') %>
+  <%= f.text_field :slug, label: t(:'.fields.slug.label'), help: t(:'.fields.slug.help_block') %>
+  <div class="form-group">
+    <%= label_tag 'exhibit_filter_field', t('exhibit_filter.fields.field.label'), class: 'col-md-2 control-label' %>
+  <div class="col-md-10">
+    <%= text_field_tag 'exhibit_filter[field]', '', class: 'form-control' %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag 'exhibit_filter_value', t('exhibit_filter.fields.value.label'), class: 'col-md-2 control-label' %>
+  <div class="col-md-10">
+  <%= text_field_tag 'exhibit_filter[value]', '', class: 'form-control' %>
+</div>
+</div>
+  <%= render 'initial_resources_form', locals: { f: f } %>
+  <div class="form-actions">
+    <div class="primary-actions">
+      <%= f.submit nil, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+  exhibit_filter:
+    edit:
+      heading: Edit exhibit filter
+    fields:
+      field:
+        label: Solr filter field
+      value:
+        label: Search term

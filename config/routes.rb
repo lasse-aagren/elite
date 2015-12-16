@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 #  root to: "catalog#index" # replaced by spotlight root path
   blacklight_for :catalog
   devise_for :users
+  resources :exhibit_filters, only: [:update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
