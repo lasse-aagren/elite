@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215120062) do
+ActiveRecord::Schema.define(version: 20151216101245) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 20151215120062) do
 
   add_index "bookmarks", ["document_type", "document_id"], name: "index_bookmarks_on_document_type_and_document_id"
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id"
+
+  create_table "exhibit_filters", force: :cascade do |t|
+    t.integer "exhibit_id"
+    t.string  "field"
+    t.string  "value"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -135,8 +141,10 @@ ActiveRecord::Schema.define(version: 20151215120062) do
     t.integer  "masthead_id"
     t.integer  "thumbnail_id"
     t.integer  "weight",         default: 50
+    t.integer  "site_id"
   end
 
+  add_index "spotlight_exhibits", ["site_id"], name: "index_spotlight_exhibits_on_site_id"
   add_index "spotlight_exhibits", ["slug"], name: "index_spotlight_exhibits_on_slug", unique: true
 
   create_table "spotlight_featured_images", force: :cascade do |t|
@@ -237,6 +245,12 @@ ActiveRecord::Schema.define(version: 20151215120062) do
 
   add_index "spotlight_searches", ["exhibit_id"], name: "index_spotlight_searches_on_exhibit_id"
   add_index "spotlight_searches", ["slug", "scope"], name: "index_spotlight_searches_on_slug_and_scope", unique: true
+
+  create_table "spotlight_sites", force: :cascade do |t|
+    t.string  "title"
+    t.string  "subtitle"
+    t.integer "masthead_id"
+  end
 
   create_table "spotlight_solr_document_sidecars", force: :cascade do |t|
     t.integer  "exhibit_id"
