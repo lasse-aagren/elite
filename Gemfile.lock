@@ -196,6 +196,7 @@ GEM
       memoist (~> 0.12)
       multi_json (~> 1.11)
       signet (~> 0.7)
+    http_logger (0.5.1)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -410,6 +411,7 @@ DEPENDENCIES
   dtu_blacklight_common!
   factory_girl_rails
   friendly_id
+  http_logger
   jbuilder (~> 2.0)
   jettywrapper (>= 2.0)
   jquery-rails

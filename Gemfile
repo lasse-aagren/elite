@@ -38,6 +38,7 @@ group :development, :test do
   gem 'xray-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'http_logger'
 end
 
 group :development do
